@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --bg-b: #5c5c5c;
+    --bg-icon-off: #ADADAD;
+    --bg-icon-on: #179c53;
+    --bg-bar: #5F5F5F;
+    --bar-size: 2rem;
+    --bar-weight: .3rem;
+    --icon-size: 1.5rem;
+    --zoom: 2;
+  }
+
+.container {
+    margin: 0 auto;
+    width: 70vw;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 20px;
+    margin-top: 50px;
+
+}
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+h1 {
+    font-size: 3.5rem;
+}
+#addButton {
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    padding: 0 20px;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+#addButton:hover {
+    border: 2px solid black;
+    border-radius: 15px;
+    transition: border 0.2s linear;
+}
+.form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28vw;
+    display: none;
+    flex-direction: column;
+    z-index: 40;
+    background-color: white;
+    padding: 50px;
+}
+form {
+    font-size: 1.5rem;
+}
+input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid black;
+    margin: 3px 0 15px;
+    font-size: 1.5rem;
+    padding-left: 5px;
+}
+#btn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px 15px;
+}
+#btn:hover {
+    background-color: black;
+    color: white;
+}
+.shaddow {
+    z-index: 25;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    opacity: .8;
+    display: none;
+}
+svg {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    width: 30px; /* Ustawienie szerokości na 16 pikseli */
+    height: 30px; /* Ustawienie wysokości na 16 pikseli */
+    cursor: pointer;
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 30px;
+}
+.card {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+img {
+    width: 150px;
+    border-top-left-radius: 15px;
+    -webkit-box-shadow: 3px 3px 11px 0px rgba(0,0,0,0.66);
+    box-shadow: 3px 3px 11px 0px rgba(0,0,0,0.66);
+    z-index: 10;
+}
+.title {
+    margin-top: 10px;
+    font-weight: 500;
+}
+div p {
+    margin-top: 5px;
+}
+
+
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3px;
+}
+.read {
+    margin-right: 10px;
+}
+.switch {
+    display: inline-block;
+}
+
+.switch input {
+    display: none;
+}
+
+.switch label {
+    display: block;
+    width: 40px;
+    height: 20px;
+    padding: 2px;
+    border-radius: 15px;
+    border: 2px solid #181818;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+.switch label::after {
+    content: "";
+    display: inherit;
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    background: #000000;
+    transition: 0.3s;
+}
+
+.switch input:checked ~ label {
+    background-color: rgb(19, 189, 13);
+}
+
+.switch input:checked ~ label::after {
+    translate: 20px 0;
+}
+.remove-book {
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+.card:hover .remove-book {
+    transform: translateY(-30%);
+}
+
+@media screen and (max-width: 750px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
